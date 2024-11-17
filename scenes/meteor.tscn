@@ -1,9 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4bewabiajalm"]
+[gd_scene load_steps=7 format=3 uid="uid://b4bewabiajalm"]
 
-[ext_resource type="Texture2D" uid="uid://b0mn10voq1ag7" path="res://art/enemySwimming_1.png" id="1_xfaxf"]
+[ext_resource type="Script" path="res://scenes/meteor.gd" id="1_5vewc"]
+[ext_resource type="Texture2D" uid="uid://bmr16hlyaam0u" path="res://art/ratpos1.png" id="2_je3ld"]
+[ext_resource type="Texture2D" uid="uid://ddfqqtq5a8kbq" path="res://art/ratpos2.png" id="3_61ius"]
+[ext_resource type="Texture2D" uid="uid://cqpbql1xapaot" path="res://art/ratpos3.png" id="4_ct7pn"]
 
-[node name="Meteor" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3xilh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_je3ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_61ius")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ct7pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_61ius")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_xfaxf")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h1rx1"]
+radius = 22.0
+height = 116.0
+
+[node name="Meteor" type="Area2D"]
+script = ExtResource("1_5vewc")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(167, 153)
+rotation = 1.5708
+scale = Vector2(0.685, 0.685)
+sprite_frames = SubResource("SpriteFrames_3xilh")
+frame = 1
+frame_progress = 0.361663
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(168, 148)
+shape = SubResource("CapsuleShape2D_h1rx1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
