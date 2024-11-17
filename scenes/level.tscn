@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7hv0rxgciess"]
+
+[ext_resource type="PackedScene" uid="uid://btjci521y6mvf" path="res://scenes/node_2d.tscn" id="1_nm7rl"]
+[ext_resource type="PackedScene" uid="uid://b4bewabiajalm" path="res://scenes/meteor.tscn" id="2_5ssfk"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Node_2D" parent="." instance=ExtResource("1_nm7rl")]
+position = Vector2(384, 357)
+
+[node name="Meteor" parent="." instance=ExtResource("2_5ssfk")]

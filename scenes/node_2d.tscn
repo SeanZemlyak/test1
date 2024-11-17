@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://btjci521y6mvf"]
+
+[ext_resource type="Script" path="res://scenes/node_2d.gd" id="1_g8agx"]
+[ext_resource type="Texture2D" uid="uid://cypbywd3j4e1b" path="res://art/playerGrey_walk2.png" id="1_tqa3l"]
+
+[node name="node_2d" type="Node2D"]
+script = ExtResource("1_g8agx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_tqa3l")
