@@ -1,21 +1,25 @@
 [gd_scene load_steps=4 format=3 uid="uid://btjci521y6mvf"]
 
 [ext_resource type="Script" path="res://scenes/node_2d.gd" id="1_g8agx"]
-[ext_resource type="Texture2D" uid="uid://cs0ka4bb0sjgx" path="res://art/cathrowaway.png" id="2_f7k4k"]
+[ext_resource type="Texture2D" uid="uid://de36ror1eumeb" path="res://art/catfinal.png" id="2_awj78"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lomf1"]
-radius = 27.0
-height = 92.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4k17"]
+radius = 34.0
+height = 108.0
 
 [node name="node_2d" type="CharacterBody2D"]
-position = Vector2(209, 629)
+position = Vector2(241, 663)
+collision_layer = 2
 script = ExtResource("1_g8agx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(34, 41)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_f7k4k")
+position = Vector2(10.5, -16)
+scale = Vector2(0.914063, 1)
+texture = ExtResource("2_awj78")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(34, 44)
-shape = SubResource("CapsuleShape2D_lomf1")
+position = Vector2(-13, -1)
+shape = SubResource("CapsuleShape2D_c4k17")
+
+[node name="LaserStart" type="Marker2D" parent="."]
+position = Vector2(0, -56)
